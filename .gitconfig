@@ -1,11 +1,11 @@
 [core]
-	editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+    editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
     excludesfile = "C:/Users/joao/.gitignore-global"
-	autocrlf = true
+    autocrlf = true
 
 [user]
-	name = "Joao Rafael"
-	email = jjrafael@gmail.com
+    name = "Joao Rafael"
+    email = jjrafael@gmail.com
 
 [color]
     branch = auto
@@ -29,12 +29,12 @@
     untracked = cyan
 
 [merge]
-	tool = winmerge
+    tool = winmerge
 [mergetool]
-	prompt = false
+    prompt = false
 [mergetool "winmerge"]
-	path = c:/Program Files (x86)/winmerge/winmergeu.exe
-	cmd = wMerge.sh \"$MERGED\" \"$REMOTE\"
+    path = c:/Program Files (x86)/winmerge/winmergeu.exe
+    cmd = wMerge.sh \"$MERGED\" \"$REMOTE\"
 [mergetool]
     keepBackup = false
     trustExitCode = false
@@ -43,56 +43,62 @@
     tool = winmerge
     guitool = winmerge
 [difftool "winmerge"]
-	path = c:/Program Files (x86)/winmerge/winmergeu.exe
-	cmd = \"c:/Program Files (x86)/winmerge/winmergeu.exe\" \"$LOCAL\" \"$REMOTE\"
+    path = c:/Program Files (x86)/winmerge/winmergeu.exe
+    cmd = \"c:/Program Files (x86)/winmerge/winmergeu.exe\" \"$LOCAL\" \"$REMOTE\"
 [difftool]
-	prompt = false
+    prompt = false
 [gui]
-	recentrepo = C:/Efacec/PROD_P2/efa-components/java/efa-chartgui
-	
+    recentrepo = C:/Efacec/PROD_P2/efa-components/java/efa-chartgui
+    
 [alias]
-	#show all alias
-	alias = "!git config -l | grep alias | cut -c 7-"
+    #show all alias
+    alias = "!git config -l | grep alias | cut -c 7-"
 
-	#log history
-	lh = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
-	
-	#list modified files in a commit
-	lc = diff-tree --no-commit-id --name-status -r
+    #show files changed on last commit
+    last = log --name-status HEAD^..HEAD
 
-	#diff changes in files in a commit
-	dc = "!f() { git difftool $1^! $2; }; f"
+    #log history
+    lh = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
 
-	#diff directory
-	dd = difftool --dir-diff
-	
-	#diff file
-	df = difftool
-	
-	#branch
-	sh = branch
-	br = branch
-	
-	#checkout
-	co = checkout
-	
-	#commit
-	ci = commit
-	
-	#status
-	st = status
+    #log history files
+    lf = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    
+    #list modified files in a commit
+    lc = diff-tree --no-commit-id --name-status -r
 
-	#cherry pick
-	cp = cherry-pick
+    #diff changes in files in a commit
+    dc = "!f() { git difftool $1^! $2; }; f"
 
-	#revert changes
-	revert = reset HEAD --
+    #diff directory
+    dd = difftool --dir-diff
+    
+    #diff file
+    df = difftool
+    
+    #branch
+    sh = branch
+    br = branch
+    
+    #checkout
+    co = checkout
+    
+    #commit
+    ci = commit
+    
+    #status
+    st = status
 
-	#amend last commit
-	amend = commit --amend
+    #cherry pick
+    cp = cherry-pick
 
-	#find git history
-	find = "!f() { git log -S$1; }; f"
-	
-	#creates an empty base repository
-	bare = init --bare --shared foo.git
+    #revert changes
+    revert = reset HEAD --
+
+    #amend last commit
+    amend = commit --amend
+
+    #find git history
+    find = "!f() { git log -S$1; }; f"
+        
+    #creates an empty base repository
+    bare = init --bare --shared foo.git
