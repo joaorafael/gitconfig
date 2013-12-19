@@ -104,4 +104,4 @@
     bare = init --bare --shared 
 
     #backup gitconfig
-    bak = "!f() { cd /c/Projects/gitconfig/; cp ~/.gitconfig .; git add .gitconfig; git ci -m 'updated $1'; git push -u origin; cd -; }; f"
+    bak = "!f() { cd /c/Projects/gitconfig/; cp ~/.gitconfig .; git add .gitconfig; git ci -m 'updated'; git push -u origin; cd -; }; f"
