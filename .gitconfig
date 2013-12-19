@@ -101,4 +101,7 @@
     find = "!f() { git log -S$1; }; f"
         
     #creates an empty base repository
-    bare = init --bare --shared foo.git
+    bare = init --bare --shared 
+
+    #backup gitconfig
+    bak = "!f() { cp ~/.gitconfig /c/Projects/gitconfig/; }; f"
